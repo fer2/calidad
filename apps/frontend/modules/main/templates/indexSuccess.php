@@ -17,7 +17,7 @@
       </li>
       <li>
         <?php echo link_to('Solicitudes', 'solicitudes/index') ?>
-      </li>
+      </li> 
     </ul>
   </div>
 </div>
