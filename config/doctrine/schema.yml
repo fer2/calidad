@@ -1,0 +1,56 @@
+USUARIO:
+  columns:
+    user: { type: string(255), notnull:true, unique: true }
+    pass: { type: string(255), notnull:true }
+    name: { type: string(255), notnull:true }
+    last_name: { type: string(255), notnull:true }
+    mail: { type: string(255), notnull:true }
+    fone: { type: string(255), notnull:true }
+    esAdminPyme: { type: boolean, notnull: true, default: 0 }
+  relations:
+
+PAIS:
+  columns:
+    name: { type: string(255), notnull:true, unique: true }
+  relations:
+
+EMPRESA:
+  columns:
+    name: { type: string(255), notnull:true, unique: true }
+    is_active: { type: boolean, notnull: true, default: 0 }
+  relations:
+    USUARIO:
+      foreignType: one
+
+CONSUL_PYME:
+  columns:
+  relations:
+
+SOLICITUD:
+  columns:
+    estado: { type: enum, legth: 4, values: ['acep','rech', 'pend'] }
+    description: { string(255) }
+  relations:
+
+PROYECTO:
+  columns:
+    name: { type: string(255), notnull:true, unique: true }
+    url: { type: string(255), notnull:true } # ver
+    descripcion: { string(255) }
+  relations:
+
+HERRAMIENTA:
+  columns:
+    codigo: { string(255), notnull:true, unique: true }
+    name: { type: string(255), notnull:true, unique: true }
+    url: { type: string(255), notnull:true }
+    descripcion: { string(255) }
+  relations:
+
+GUIA:
+  columns:
+    codigo: { string(255), notnull:true, unique: true }
+    name: { type: string(255), notnull:true, unique: true }
+    url: { type: string(255), notnull:true }
+    descripcion: { string(255) }
+  relations:

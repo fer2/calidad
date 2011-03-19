@@ -1,0 +1,86 @@
+#main
+{
+  padding: 1%;
+  min-width: 750px;
+}
+
+#contenido
+{
+  height: 400px;
+}
+
+#header
+{
+  border: 1px solid#BDBDBD;
+  margin: .5%;
+  padding: .5%;
+}
+
+#logo
+{
+  margin: .5%;
+  padding: .5%;
+  width: 45%;
+  float: left;
+  background-color: #E0E0E0;
+  text-align: center;
+}
+
+#info_sistema
+{
+  margin: .5%;
+  padding: .5%;
+  width: 45%;
+  float: left;
+  text-align: right;
+}
+
+.corr
+{
+  clear: both;
+}
+
+#titulo_ppal
+{
+  border: 1px solid#BDBDBD;
+  margin: .5%;
+  padding: .5%;
+  clear: both;
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #F2F2F2;
+}
+
+#descripcion
+{
+  float: left;
+  padding: 5px;
+  height: 300px;
+  width: 70%;
+}
+
+#box_login
+{
+  margin: .5%;
+  padding: .5%;
+  float: right;
+  background-color: #E0E0E0;
+  border: 1px solid#BDBDBD;
+  width: 20%;
+  text-align: left;
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+#signin_username, #signin_password
+{
+  width: 100%;
+}
+
+#footer
+{
+  border: 1px solid#BDBDBD;
+  margin: .5%;
+  padding: .5%;
+  background-color: #E6E6E6;
+  text-align: center;
+}
