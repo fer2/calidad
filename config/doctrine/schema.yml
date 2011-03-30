@@ -1,56 +1,70 @@
-USUARIO:
+Country:
   columns:
-    user: { type: string(255), notnull:true, unique: true }
-    pass: { type: string(255), notnull:true }
-    name: { type: string(255), notnull:true }
-    last_name: { type: string(255), notnull:true }
-    mail: { type: string(255), notnull:true }
-    fone: { type: string(255), notnull:true }
-    esAdminPyme: { type: boolean, notnull: true, default: 0 }
-  relations:
-
-PAIS:
-  columns:
+    id: { type: integer(4), autoincrement: true, primary: true }
     name: { type: string(255), notnull:true, unique: true }
-  relations:
 
-EMPRESA:
+Company:
   columns:
+    id: { type: integer(4), autoincrement: true, primary: true }
     name: { type: string(255), notnull:true, unique: true }
     is_active: { type: boolean, notnull: true, default: 0 }
+    country_id: { type: integer(4) }
   relations:
-    USUARIO:
+    Country:
+      foreignAlias: Companys
+
+Application:
+  columns:
+    id: { type: integer(4), autoincrement: true, primary: true }
+    name: { type: string(255), notnull:true, unique: true }
+    state: string(100) 
+    description: string(255)
+    company_id: { type: integer(4) }
+  relations:
+    Company:
       foreignType: one
 
-CONSUL_PYME:
+Project:
   columns:
-  relations:
-
-SOLICITUD:
-  columns:
-    estado: { type: enum, legth: 4, values: ['acep','rech', 'pend'] }
-    description: { string(255) }
-  relations:
-
-PROYECTO:
-  columns:
+    id: { type: integer(4), autoincrement: true, primary: true }
     name: { type: string(255), notnull:true, unique: true }
-    url: { type: string(255), notnull:true } # ver
-    descripcion: { string(255) }
+    url: { type: string(255) } # ver
+    description: string(255)
+    company_id: integer(4)
   relations:
+    Company:
+      foreignAlias: Projects
+    Tools:
+      foreignAlias: Projects
+      class: Tool
+      refClass: ProjectTool
 
-HERRAMIENTA:
+Tool:
   columns:
-    codigo: { string(255), notnull:true, unique: true }
+    id: { type: integer(4), autoincrement: true, primary: true }
+    code: { type: string(255), notnull:true, unique: true }
+    name: { type: string(255), notnull:true, unique: true }
+    url: { type: string(255) }
+    description: string(255)    
+
+ProjectTool:
+  columns:
+    project_id: { type: integer(4), primary: true }
+    tool_id: { type: integer(4), primary: true }
+  relations:
+    Tool:
+      foreignAlias: ProjectTools
+    Project:
+      foreignAlias: ProjectTools
+
+Guide:
+  columns:
+    id: { type: integer(4), autoincrement: true, primary: true }
+    code: { type: string(255), notnull:true, unique: true }
     name: { type: string(255), notnull:true, unique: true }
     url: { type: string(255), notnull:true }
-    descripcion: { string(255) }
+    description: string(255)
+    tool_id: integer (4)
   relations:
-
-GUIA:
-  columns:
-    codigo: { string(255), notnull:true, unique: true }
-    name: { type: string(255), notnull:true, unique: true }
-    url: { type: string(255), notnull:true }
-    descripcion: { string(255) }
-  relations:
+    Tool:
+      foreignType: one

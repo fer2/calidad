@@ -6,7 +6,7 @@
 
 #contenido
 {
-  height: 400px;
+  min-height: 400px;
 }
 
 #header
@@ -78,9 +78,10 @@
 
 #footer
 {
-  border: 1px solid#BDBDBD;
+  border-top: 1px solid#BDBDBD;
   margin: .5%;
   padding: .5%;
-  background-color: #E6E6E6;
+
   text-align: center;
+  clear: both;
 }

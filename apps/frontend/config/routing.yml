@@ -1,5 +1,47 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
+application:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Application
+    module:               solicitud
+    prefix_path:          /solicitud
+    column:               id
+    with_wildcard_routes: true
+
+guide:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Guide
+    module:               guia
+    prefix_path:          /guia
+    column:               id
+    with_wildcard_routes: true
+
+tool:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Tool
+    module:               herramienta
+    prefix_path:          /herramienta
+    column:               id
+    with_wildcard_routes: true
+
+company_empresa:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Company
+    module:               empresa
+    prefix_path:          /empresa
+    column:               id
+    with_wildcard_routes: true
+
+company:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Company
+    module:               company
+    prefix_path:          /company
+    column:               id
+    with_wildcard_routes: true
 
 # default rules
 homepage:

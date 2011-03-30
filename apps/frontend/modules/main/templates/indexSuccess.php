@@ -4,19 +4,19 @@
   <div id="navi">
     <ul>
       <li>
-        <?php echo link_to('Empresas', 'empresas/index') ?>
+        <?php echo link_to('Empresas', 'empresa/index') ?>
       </li>
       <li>
-        <?php echo link_to('Usuarios', 'usuarios/index') ?>
+        <?php echo link_to('Usuarios', 'sfGuardUser/index') ?>
       </li>
       <li>
-        <?php echo link_to('Herramientas', 'herramientas/index') ?>
+        <?php echo link_to('Herramientas', 'herramienta/index') ?>
       </li>
       <li>
-        <?php echo link_to('Gu&iacute;as', 'guias/index') ?>
+        <?php echo link_to('Gu&iacute;as', 'guia/index') ?>
       </li>
       <li>
-        <?php echo link_to('Solicitudes', 'solicitudes/index') ?>
+        <?php echo link_to('Solicitudes', 'solicitud/index') ?>
       </li> 
     </ul>
   </div>
