@@ -9,8 +9,8 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <div id="main">
-      <div id="header">
+    <div id="principal">
+      <div id="encabezado">
         <div id="logo">
           <p>Logo con Im&aacute;gen</p>
         </div>

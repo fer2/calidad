@@ -14,10 +14,10 @@ generator:
       fields:
         first_name:         { label: "Nombre" }
         last_name:          { label: "Apellido" }
-        email_address:      { label: "Email" }
+        email_address:      { label: "Email", help: juan@gmail.com }
         username:           { label: "Usuario" }
         password:           { label: "Contraseña" }
-        password_again:     { label: "Confirmar Contraseña" }
+        password_again:     { label: "Confirmar", help: Repetir la contraseña }
         created_at:         { label: "Creado el" }
         updated_at:         { label: "Actualizado el" }
         last_login:         { label: "Último login" }
@@ -30,6 +30,10 @@ generator:
       list:
         title:   Listado de Usuarios
         display: [=username, is_active, created_at, last_login]
+        #batch_actions: {}                                              <- esto sirve para quitar las operaciones batch
+        #object_actions: {}                                             <- esto sirve para quitar las acciones para un objeto único
+      actions:
+        _new:              { label: "Nuevo Usuario" }
 
       filter:
         display: [first_name, last_name, username, is_active, is_super_admin, groups_list, permissions_list]

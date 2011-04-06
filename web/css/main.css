@@ -1,4 +1,4 @@
-#main
+#principal
 {
   padding: 1%;
   min-width: 750px;
@@ -9,7 +9,7 @@
   min-height: 400px;
 }
 
-#header
+#encabezado
 {
   border: 1px solid#BDBDBD;
   margin: .5%;
