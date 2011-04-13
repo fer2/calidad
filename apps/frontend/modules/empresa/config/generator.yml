@@ -13,10 +13,20 @@ generator:
 
     config:
       actions:
-        _new:              { label: "Nueva Empresa" }
-      fields:  ~
-      list:    ~
+        _new:               { label: "Nueva Empresa" }
+      fields:  
+        name:               { label: "Nombre"}
+        is_active:          { label: "Activa"}
+        country_id:         { label: "País" }
+        country_name:       { label: "País" }
+      list:
+        title:              Empresas
+        batch_actions:      {}
+        display:            [name, is_active, country_name]
+        #peer_method:        doSelectJoinCompanyCountry
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        title:              Editar Empresa
+      new:     
+        title:              Nueva Empresa

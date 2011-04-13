@@ -19,7 +19,7 @@ abstract class BaseToolForm extends BaseFormDoctrine
       'code'          => new sfWidgetFormInputText(),
       'name'          => new sfWidgetFormInputText(),
       'url'           => new sfWidgetFormInputText(),
-      'description'   => new sfWidgetFormInputText(),
+      'description'   => new sfWidgetFormTextarea(),
       'projects_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Project')),
     ));
 
@@ -28,7 +28,7 @@ abstract class BaseToolForm extends BaseFormDoctrine
       'code'          => new sfValidatorString(array('max_length' => 255)),
       'name'          => new sfValidatorString(array('max_length' => 255)),
       'url'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'description'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'description'   => new sfValidatorString(array('required' => false)),
       'projects_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Project', 'required' => false)),
     ));
 

@@ -8,7 +8,7 @@
  * @property integer $id
  * @property string $name
  * @property string $url
- * @property string $description
+ * @property blob $description
  * @property integer $company_id
  * @property Company $Company
  * @property Doctrine_Collection $Tools
@@ -17,7 +17,7 @@
  * @method integer             getId()           Returns the current record's "id" value
  * @method string              getName()         Returns the current record's "name" value
  * @method string              getUrl()          Returns the current record's "url" value
- * @method string              getDescription()  Returns the current record's "description" value
+ * @method blob                getDescription()  Returns the current record's "description" value
  * @method integer             getCompanyId()    Returns the current record's "company_id" value
  * @method Company             getCompany()      Returns the current record's "Company" value
  * @method Doctrine_Collection getTools()        Returns the current record's "Tools" collection
@@ -57,9 +57,8 @@ abstract class BaseProject extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('description', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
+        $this->hasColumn('description', 'blob', null, array(
+             'type' => 'blob',
              ));
         $this->hasColumn('company_id', 'integer', 4, array(
              'type' => 'integer',

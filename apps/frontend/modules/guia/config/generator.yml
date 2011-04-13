@@ -12,10 +12,24 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      actions: 
+        _new:              { label: "Nueva Guía" }
+      fields:  
+        code:              { label: "Código", help: "código externo" }
+        url:               { help: "http://www.faqs.org/rfcs/rfc821.html" }
+        name:              { label: "Nombre" }
+        description:       { label: "Descripción" }
+        tool_id:           { label: "Herramienta" }
+        tool_name:         { label: "Herramienta" }
+      list:
+        title:             Guías
+        batch_actions:     {}
+        #peer_method:       doSelectJoinTool   <-no anda
+        display:           [code, url, name, description, tool_name ]
+      filter:
+        display:           [code, name, tool_id]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title:             Editar Guía
+      new:
+        title:             Nueva Guía

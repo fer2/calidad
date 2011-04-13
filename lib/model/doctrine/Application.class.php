@@ -16,4 +16,8 @@ class Application extends BaseApplication
   {
     return $this->getName();
   }
+  public function getCompanyName()
+  {
+      return $this->getCompany()->getName();
+  }
 }

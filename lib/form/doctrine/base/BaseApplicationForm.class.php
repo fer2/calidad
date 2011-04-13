@@ -17,16 +17,16 @@ abstract class BaseApplicationForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'name'        => new sfWidgetFormInputText(),
-      'state'       => new sfWidgetFormInputText(),
-      'description' => new sfWidgetFormInputText(),
+      'state'       => new sfWidgetFormChoice(array('choices' => array('pendiente' => 'pendiente', 'aprobada' => 'aprobada', 'desaprobada' => 'desaprobada'))),
+      'description' => new sfWidgetFormTextarea(),
       'company_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'        => new sfValidatorString(array('max_length' => 255)),
-      'state'       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'description' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'state'       => new sfValidatorChoice(array('choices' => array(0 => 'pendiente', 1 => 'aprobada', 2 => 'desaprobada'), 'required' => false)),
+      'description' => new sfValidatorString(array('required' => false)),
       'company_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'required' => false)),
     ));
 

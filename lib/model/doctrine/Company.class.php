@@ -16,4 +16,8 @@ class Company extends BaseCompany
   {
     return $this->getName();
   }
+  public function getCountryName()
+  {
+      return $this->getCountry()->getName();
+  }
 }

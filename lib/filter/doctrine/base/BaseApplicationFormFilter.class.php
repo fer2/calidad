@@ -14,14 +14,14 @@ abstract class BaseApplicationFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'name'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'state'       => new sfWidgetFormFilterInput(),
+      'state'       => new sfWidgetFormChoice(array('choices' => array('' => '', 'pendiente' => 'pendiente', 'aprobada' => 'aprobada', 'desaprobada' => 'desaprobada'))),
       'description' => new sfWidgetFormFilterInput(),
       'company_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'name'        => new sfValidatorPass(array('required' => false)),
-      'state'       => new sfValidatorPass(array('required' => false)),
+      'state'       => new sfValidatorChoice(array('required' => false, 'choices' => array('pendiente' => 'pendiente', 'aprobada' => 'aprobada', 'desaprobada' => 'desaprobada'))),
       'description' => new sfValidatorPass(array('required' => false)),
       'company_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Company'), 'column' => 'id')),
     ));
@@ -45,7 +45,7 @@ abstract class BaseApplicationFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'          => 'Number',
       'name'        => 'Text',
-      'state'       => 'Text',
+      'state'       => 'Enum',
       'description' => 'Text',
       'company_id'  => 'ForeignKey',
     );

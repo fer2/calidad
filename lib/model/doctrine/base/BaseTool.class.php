@@ -9,7 +9,7 @@
  * @property string $code
  * @property string $name
  * @property string $url
- * @property string $description
+ * @property blob $description
  * @property Doctrine_Collection $Projects
  * @property Doctrine_Collection $ProjectTools
  * @property Guide $Guide
@@ -18,7 +18,7 @@
  * @method string              getCode()         Returns the current record's "code" value
  * @method string              getName()         Returns the current record's "name" value
  * @method string              getUrl()          Returns the current record's "url" value
- * @method string              getDescription()  Returns the current record's "description" value
+ * @method blob                getDescription()  Returns the current record's "description" value
  * @method Doctrine_Collection getProjects()     Returns the current record's "Projects" collection
  * @method Doctrine_Collection getProjectTools() Returns the current record's "ProjectTools" collection
  * @method Guide               getGuide()        Returns the current record's "Guide" value
@@ -63,9 +63,8 @@ abstract class BaseTool extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('description', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
+        $this->hasColumn('description', 'blob', null, array(
+             'type' => 'blob',
              ));
     }
 

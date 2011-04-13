@@ -18,7 +18,7 @@ generator:
         username:           { label: "Usuario" }
         password:           { label: "Contraseña" }
         password_again:     { label: "Confirmar", help: Repetir la contraseña }
-        created_at:         { label: "Creado el" }
+        created_at:         { label: "Creado el", date_format: dd/MM/yyyy }
         updated_at:         { label: "Actualizado el" }
         last_login:         { label: "Último login" }
         algorithm:          { label: "Algoritmo" }
@@ -28,24 +28,23 @@ generator:
         permissions_list:   { label: "Permisos" }
 
       list:
-        title:   Listado de Usuarios
-        display: [=username, is_active, created_at, last_login]
-        #batch_actions: {}                                              <- esto sirve para quitar las operaciones batch
-        #object_actions: {}                                             <- esto sirve para quitar las acciones para un objeto único
+        title:              Listado de Usuarios
+        display:            [=username, is_active, created_at, last_login]
+        #batch_actions:     {}                  <- esto sirve para quitar las operaciones batch
+        #object_actions:    {}                  <- esto sirve para quitar las acciones para un objeto único
       actions:
-        _new:              { label: "Nuevo Usuario" }
+        _new:               { label: "Nuevo Usuario" }
 
       filter:
-        display: [first_name, last_name, username, is_active, is_super_admin, groups_list, permissions_list]
+        display:            [first_name, last_name, username, is_active]
 
       form:
         class: sfGuardUserAdminForm
         display:
           "Usuario":           [first_name, last_name, email_address, username, password, password_again]
           "Permisos y grupos": [is_active, is_super_admin, groups_list, permissions_list]
-
       edit:
-        title: Editando Usuario "%%username%%"
+        title:                 Editando Usuario "%%username%%"
 
       new:
-        title: Nuevo Usuario
+        title:                 Nuevo Usuario

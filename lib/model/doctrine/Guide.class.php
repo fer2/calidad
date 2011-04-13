@@ -16,4 +16,8 @@ class Guide extends BaseGuide
   {
     return $this->getName();
   }
+  public function getToolName()
+  {
+    return $this->getTool()->getName();
+  }
 }

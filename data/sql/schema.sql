@@ -1,10 +1,10 @@
-CREATE TABLE application (id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, state VARCHAR(100), description VARCHAR(255), company_id INT, INDEX company_id_idx (company_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE application (id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, state VARCHAR(255), description LONGBLOB, company_id INT, INDEX company_id_idx (company_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE company (id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, is_active TINYINT(1) DEFAULT '0' NOT NULL, country_id INT, INDEX country_id_idx (country_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE country (id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE guide (id INT AUTO_INCREMENT, code VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL UNIQUE, url VARCHAR(255) NOT NULL, description VARCHAR(255), tool_id INT, INDEX tool_id_idx (tool_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE project (id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, url VARCHAR(255), description VARCHAR(255), company_id INT, INDEX company_id_idx (company_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE guide (id INT AUTO_INCREMENT, code VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL UNIQUE, url VARCHAR(255) NOT NULL, description LONGBLOB, tool_id INT, INDEX tool_id_idx (tool_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE project (id INT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, url VARCHAR(255), description LONGBLOB, company_id INT, INDEX company_id_idx (company_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE project_tool (project_id INT, tool_id INT, PRIMARY KEY(project_id, tool_id)) ENGINE = INNODB;
-CREATE TABLE tool (id INT AUTO_INCREMENT, code VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL UNIQUE, url VARCHAR(255), description VARCHAR(255), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE tool (id INT AUTO_INCREMENT, code VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL UNIQUE, url VARCHAR(255), description LONGBLOB, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_forgot_password (id BIGINT AUTO_INCREMENT, user_id BIGINT NOT NULL, unique_key VARCHAR(255), expires_at DATETIME NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX user_id_idx (user_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_group (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, description TEXT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_group_permission (group_id BIGINT, permission_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(group_id, permission_id)) ENGINE = INNODB;

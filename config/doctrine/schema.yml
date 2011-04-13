@@ -17,8 +17,10 @@ Application:
   columns:
     id: { type: integer(4), autoincrement: true, primary: true }
     name: { type: string(255), notnull:true, unique: true }
-    state: string(100) 
-    description: string(255)
+    state:
+      type: enum
+      values: [pendiente, aprobada, desaprobada]
+    description: blob
     company_id: { type: integer(4) }
   relations:
     Company:
@@ -28,8 +30,8 @@ Project:
   columns:
     id: { type: integer(4), autoincrement: true, primary: true }
     name: { type: string(255), notnull:true, unique: true }
-    url: { type: string(255) } # ver
-    description: string(255)
+    url: { type: string(255) }#                                             ver
+    description: blob
     company_id: integer(4)
   relations:
     Company:
@@ -45,7 +47,7 @@ Tool:
     code: { type: string(255), notnull:true, unique: true }
     name: { type: string(255), notnull:true, unique: true }
     url: { type: string(255) }
-    description: string(255)    
+    description: blob
 
 ProjectTool:
   columns:
@@ -63,7 +65,7 @@ Guide:
     code: { type: string(255), notnull:true, unique: true }
     name: { type: string(255), notnull:true, unique: true }
     url: { type: string(255), notnull:true }
-    description: string(255)
+    description: blob
     tool_id: integer (4)
   relations:
     Tool:

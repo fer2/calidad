@@ -12,10 +12,24 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      actions: 
+        _new:              { label: "Nueva Herramienta"}
+      fields:
+        code:              { label: "Código", help: "código externo" }
+        name:              { label: "Nombre" }
+        url:               { help: "www.google.com/imagenes" }
+        description:       { label: "Descripción" }
+        projects_list:     { label: "Proyectos" }
+      list:    
+        title:             Herramientas
+        batch_actions:     {}
+        display:           [code, name, url, description]
+      filter:  
+        display:           [code, name]
+      form:
+        display:
+          NONE:            [code, name, url, description]
+      edit:    
+        title:             "Editando herramienta: %%name%%"
+      new:     
+        title:             Nueva Herramienta

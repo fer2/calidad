@@ -7,15 +7,15 @@
  * 
  * @property integer $id
  * @property string $name
- * @property string $state
- * @property string $description
+ * @property enum $state
+ * @property blob $description
  * @property integer $company_id
  * @property Company $Company
  * 
  * @method integer     getId()          Returns the current record's "id" value
  * @method string      getName()        Returns the current record's "name" value
- * @method string      getState()       Returns the current record's "state" value
- * @method string      getDescription() Returns the current record's "description" value
+ * @method enum        getState()       Returns the current record's "state" value
+ * @method blob        getDescription() Returns the current record's "description" value
  * @method integer     getCompanyId()   Returns the current record's "company_id" value
  * @method Company     getCompany()     Returns the current record's "Company" value
  * @method Application setId()          Sets the current record's "id" value
@@ -47,13 +47,17 @@ abstract class BaseApplication extends sfDoctrineRecord
              'unique' => true,
              'length' => 255,
              ));
-        $this->hasColumn('state', 'string', 100, array(
-             'type' => 'string',
-             'length' => 100,
+        $this->hasColumn('state', 'enum', null, array(
+             'type' => 'enum',
+             'values' => 
+             array(
+              0 => 'pendiente',
+              1 => 'aprobada',
+              2 => 'desaprobada',
+             ),
              ));
-        $this->hasColumn('description', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
+        $this->hasColumn('description', 'blob', null, array(
+             'type' => 'blob',
              ));
         $this->hasColumn('company_id', 'integer', 4, array(
              'type' => 'integer',

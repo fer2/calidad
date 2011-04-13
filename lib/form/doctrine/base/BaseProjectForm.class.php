@@ -18,7 +18,7 @@ abstract class BaseProjectForm extends BaseFormDoctrine
       'id'          => new sfWidgetFormInputHidden(),
       'name'        => new sfWidgetFormInputText(),
       'url'         => new sfWidgetFormInputText(),
-      'description' => new sfWidgetFormInputText(),
+      'description' => new sfWidgetFormTextarea(),
       'company_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'add_empty' => true)),
       'tools_list'  => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Tool')),
     ));
@@ -27,7 +27,7 @@ abstract class BaseProjectForm extends BaseFormDoctrine
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'        => new sfValidatorString(array('max_length' => 255)),
       'url'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'description' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'description' => new sfValidatorString(array('required' => false)),
       'company_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'required' => false)),
       'tools_list'  => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Tool', 'required' => false)),
     ));

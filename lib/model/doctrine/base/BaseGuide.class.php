@@ -9,7 +9,7 @@
  * @property string $code
  * @property string $name
  * @property string $url
- * @property string $description
+ * @property blob $description
  * @property integer $tool_id
  * @property Tool $Tool
  * 
@@ -17,7 +17,7 @@
  * @method string  getCode()        Returns the current record's "code" value
  * @method string  getName()        Returns the current record's "name" value
  * @method string  getUrl()         Returns the current record's "url" value
- * @method string  getDescription() Returns the current record's "description" value
+ * @method blob    getDescription() Returns the current record's "description" value
  * @method integer getToolId()      Returns the current record's "tool_id" value
  * @method Tool    getTool()        Returns the current record's "Tool" value
  * @method Guide   setId()          Sets the current record's "id" value
@@ -61,9 +61,8 @@ abstract class BaseGuide extends sfDoctrineRecord
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('description', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
+        $this->hasColumn('description', 'blob', null, array(
+             'type' => 'blob',
              ));
         $this->hasColumn('tool_id', 'integer', 4, array(
              'type' => 'integer',

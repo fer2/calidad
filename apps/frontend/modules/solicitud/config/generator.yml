@@ -12,10 +12,22 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      actions:
+        _new:              { label: "nueva solicitud" }
+      fields:
+        name:              { label: "Nombre" }
+        state:             { label: "Estado" }
+        description:       { label: "Descripcion" }
+        company_id:        { label: "Empresa" }
+        company_name:      { label: "Empresa" }
+      list:
+        title:             Solicitudes
+        batch_actions:     {}
+        display:           [name, state, description, company_name]
+      filter:
+        display:           [name, state, company_id]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title:             "Editar Solicitud"
+      new:
+        title:             "Nueva solicitud"

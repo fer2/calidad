@@ -19,7 +19,7 @@ abstract class BaseGuideForm extends BaseFormDoctrine
       'code'        => new sfWidgetFormInputText(),
       'name'        => new sfWidgetFormInputText(),
       'url'         => new sfWidgetFormInputText(),
-      'description' => new sfWidgetFormInputText(),
+      'description' => new sfWidgetFormTextarea(),
       'tool_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Tool'), 'add_empty' => true)),
     ));
 
@@ -28,7 +28,7 @@ abstract class BaseGuideForm extends BaseFormDoctrine
       'code'        => new sfValidatorString(array('max_length' => 255)),
       'name'        => new sfValidatorString(array('max_length' => 255)),
       'url'         => new sfValidatorString(array('max_length' => 255)),
-      'description' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'description' => new sfValidatorString(array('required' => false)),
       'tool_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Tool'), 'required' => false)),
     ));
 
