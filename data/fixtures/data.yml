@@ -1,0 +1,51 @@
+Tool:
+  Tool_1:
+    code: 1@2
+    name: 'Gestión de riesgos'
+    url: www.calidad.com/riesgos.php
+    description: 'Descripción herramienta riesgos'
+  Tool_2:
+    code: 33ew
+    name: 'Determinación de roles'
+    url: www.google.com/la_otra
+    description: 'Descrip roles'
+Company:
+  Company_1:
+    name: Dimens
+    is_active: true
+    Country: Country_1
+  Company_2:
+    name: 'Google Inc.'
+    is_active: false
+    Country: Country_2
+  Company_3:
+    name: Techint
+    is_active: true
+    Country: Country_2
+Project:
+  Project_1:
+    name: 'Primer proyecto'
+    url: 'http://www.google.com/primero.fer'
+    description: 'Descripción del primer proyecto'
+Guide:
+  Guide_1:
+    code: 23rdsfs
+    name: 'Guía riesgos'
+    url: 'http://www.guias.com/riesgos'
+    description: 'Guia riesgos'
+    Tool: Tool_1
+  Guide_2:
+    code: 234w
+    name: 'otra guia'
+    url: 'http://www.faqs.org/rfcs/rfc821.html'
+    description: 'otra descrip'
+    Tool: Tool_2
+Country:
+  Country_1:
+    name: Argentina
+  Country_2:
+    name: Uruguay
+ProjectTool:
+  ProjectTool_1_1:
+    Project: Project_1
+    Tool: Tool_1
