@@ -11,14 +11,17 @@
   <body>
     <div id="principal">
       <div id="encabezado">
-        <div id="logo">
-          <p>Logo con Im&aacute;gen</p>
+        <div id="imagen">
+          Logo con Im&aacute;gen
         </div>
         <div id="info_sistema">
-          <p>Fecha: <?php echo date ( "d/m/o" ); ?></p>
+          Fecha: <?php echo date ( "d/m/o" ); ?>
         </div>
         <div class="corr"></div>
       </div>
+      <?php if ($sf_user->isAuthenticated()): ?>
+        <?php include_partial('global/menu_interno') ?>
+      <?php endif ?>
       <div id="contenido">
         <?php echo $sf_content ?>
       </div>

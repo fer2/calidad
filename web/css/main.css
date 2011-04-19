@@ -1,7 +1,14 @@
-#principal
+html
 {
-  padding: 1%;
+  background-color: #FFFFFF;
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body
+{
+  padding: 30px;
   min-width: 750px;
+  text-align: left;
 }
 
 #contenido
@@ -11,12 +18,12 @@
 
 #encabezado
 {
-  border: 1px solid#BDBDBD;
+  border: 1px solid #BDBDBD;
   margin: .5%;
   padding: .5%;
 }
 
-#logo
+#imagen
 {
   margin: .5%;
   padding: .5%;
@@ -24,6 +31,7 @@
   float: left;
   background-color: #E0E0E0;
   text-align: center;
+  font-size: 1.5em;
 }
 
 #info_sistema
@@ -42,7 +50,7 @@
 
 #titulo_ppal
 {
-  border: 1px solid#BDBDBD;
+  border: 1px solid #BDBDBD;
   margin: .5%;
   padding: .5%;
   clear: both;
@@ -65,7 +73,7 @@
   padding: .5%;
   float: right;
   background-color: #E0E0E0;
-  border: 1px solid#BDBDBD;
+  border: 1px solid #BDBDBD;
   width: 20%;
   text-align: left;
   font-family: Arial,Helvetica,sans-serif;
@@ -78,7 +86,7 @@
 
 #footer
 {
-  border-top: 1px solid#BDBDBD;
+  border-top: 1px solid #BDBDBD;
   margin: .5%;
   padding: .5%;
 

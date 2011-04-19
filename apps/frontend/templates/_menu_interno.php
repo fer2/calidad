@@ -1,5 +1,8 @@
 <div id="navi">
-  <ul>
+  <ul id="navi_ul">
+    <li>
+      <?php echo link_to('Home', 'main/index') ?>
+    </li>
     <li>
       <?php echo link_to('Empresas', 'empresa/index') ?>
     </li>

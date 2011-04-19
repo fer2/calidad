@@ -2,7 +2,7 @@
 {
   float: right;
   text-decoration: none;
-	border: 1px solid#CCCCCC;
+	border: 1px solid #CCCCCC;
   margin: 3px;
   padding: 2px;
 }
@@ -25,16 +25,12 @@
   width: 100%;
 }
 
-#navi ul
-{
-  list-style: none;
-}
-
 #navi li {
   float: left;
   margin: 2px;
   padding: 2px;
-  border: 1px solid#ffffff;
+  border: 1px solid #ffffff;
+  list-style: none;
 }
 
 #navi li a 
